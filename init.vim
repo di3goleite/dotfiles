@@ -4,6 +4,10 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 
+"*****************************************************************************
+" Bundles
+"*****************************************************************************
+
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -32,6 +36,17 @@ Plugin 'bronson/vim-trailing-whitespace'
 " Languages
 Plugin 'scrooloose/syntastic'
 Plugin 'sheerun/vim-polyglot'
+
+"" Emmet
+Plugin 'mattn/emmet-vim'
+
+"" PHP
+Plugin 'StanAngeloff/php.vim'
+Plugin 'jwalton512/vim-blade'
+
+"" JavaScript
+Plugin 'pangloss/vim-javascript'
+Plugin 'nono/jquery.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -132,6 +147,12 @@ augroup vimrc-remember-cursor-position
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
+" Fix PHP syntax
+augroup phpSyntaxOverride
+  autocmd!
+  autocmd FileType php call PhpSyntaxOverride()
+augroup END
+
 set autoread
 
 "*****************************************************************************
@@ -183,6 +204,13 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+" Fix PHP syntax
+function! PhpSyntaxOverride()
+  hi! def link phpDocTags  phpDefine
+  hi! def link phpDocParam phpType
+endfunction
+
+
 "*****************************************************************************
 " Mappings
 "*****************************************************************************
@@ -221,12 +249,6 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 let g:UltiSnipsEditSplit="vertical"
-
-" Switching windows
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
 
 " Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv

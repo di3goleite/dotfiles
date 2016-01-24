@@ -93,7 +93,7 @@ set binary
 set ruler
 set number
 set t_Co=256
-set cursorline
+" set cursorline
 set guioptions=egmrti
 
 syntax enable
@@ -209,7 +209,6 @@ function! PhpSyntaxOverride()
   hi! def link phpDocTags  phpDefine
   hi! def link phpDocParam phpType
 endfunction
-
 
 "*****************************************************************************
 " Mappings

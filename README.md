@@ -16,6 +16,12 @@ $ sudo apt-get install git exuberant-ctags ncurses-term ack-grep
 
 ## Installation
 
+First, clone the project ate recursive mode:
+
+```
+git clone --recursive git@github.com:di3goleite/dotfiles.git
+```
+
 To install nVim config:
 
 ```

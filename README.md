@@ -19,7 +19,7 @@ $ sudo apt-get install git exuberant-ctags ncurses-term ack-grep
 To install nVim config:
 
 ```
-mv init.vim bundle/ ~/.config/nvim
+cp init.vim bundle/ ~/.config/nvim
 ```
 
 Then execute this command inside the nVim editor:
@@ -31,7 +31,7 @@ Then execute this command inside the nVim editor:
 For tmux, just move tmux.conf file to the correct path:
 
 ```
-mv tmux.conf ~/.tmux.conf
+cp tmux.conf ~/.tmux.conf
 ```
 
 ## Commands

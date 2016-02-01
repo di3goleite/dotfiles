@@ -28,7 +28,7 @@ Then execute this command inside the nVim editor:
 :PluginInstall
 ```
 
-For tmux, just move tmux.conf file to the correct path:
+For tmux, just copy tmux.conf file to the correct path:
 
 ```
 cp tmux.conf ~/.tmux.conf

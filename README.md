@@ -53,8 +53,8 @@ Commands | Descriptions
 `Shift+t` | Create a tab
 `Tab` | next tab navigate
 `Shift+Tab` | previous tab navigate
-`Ctrl+t`  | Open tree navigate in actual opened file
-`Ctrl+l`  | Open/Close tree navigate files
+`Ctrl+l`  | Open tree navigate in actual opened file
+`Ctrl+t`  | Open/Close tree navigate files
 `,v` | Split vertical
 `,h` | Split horizontal
 `,ga` | Execute *git add* on current file

@@ -217,8 +217,8 @@ endfunction
 "*****************************************************************************
 
 " NERDTree
-nnoremap <silent> <C-l> :NERDTreeToggle<CR>
-nnoremap <silent> <C-t> :NERDTreeFind<CR>
+nnoremap <silent> <C-t> :NERDTreeToggle<CR>
+nnoremap <silent> <C-l> :NERDTreeFind<CR>
 
 " Split
 noremap <Leader>h :<C-u>split<CR>

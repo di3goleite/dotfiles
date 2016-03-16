@@ -11,8 +11,14 @@ The distribution is designed to work with latest nVim and tmux.
 * Ubuntu
 
 ```
-$ sudo apt-get install git exuberant-ctags ncurses-term ack-grep
+$ sudo apt-get install git exuberant-ctags ncurses-term silversearcher-ag
 ```
+
+* Fedora
+
+```
+$ sudo apt-get install git ctags ncurses the_silver_searcher
+``
 
 ## Installation
 

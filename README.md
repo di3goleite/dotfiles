@@ -17,7 +17,7 @@ $ sudo apt-get install git exuberant-ctags ncurses-term silversearcher-ag
 * Fedora
 
 ```
-$ sudo apt-get install git ctags ncurses the_silver_searcher
+$ sudo dnf install git ctags ncurses the_silver_searcher
 ```
 
 ## Installation

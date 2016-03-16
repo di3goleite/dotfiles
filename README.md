@@ -18,7 +18,7 @@ $ sudo apt-get install git exuberant-ctags ncurses-term silversearcher-ag
 
 ```
 $ sudo apt-get install git ctags ncurses the_silver_searcher
-``
+```
 
 ## Installation
 

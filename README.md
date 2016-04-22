@@ -26,7 +26,7 @@ $ sudo dnf install git tmux ctags ncurses the_silver_searcher
 - [Ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
 - [Fedora](https://github.com/neovim/neovim/wiki/Installing-Neovim#fedora-2122)
 
-**See:** Install [Powerline Fonts](https://github.com/powerline/fonts) on your computer and choose a good Powerline font for your terminal. My favorite is: [Source Code Pro for Powerline](https://github.com/powerline/fonts/tree/master/SourceCodePro)
+**See:** Install [Powerline Fonts](https://github.com/powerline/fonts) on your computer and choose a good Powerline font for your terminal. My favorite is: [Source Code Pro for Powerline](https://github.com/powerline/fonts/tree/master/SourceCodePro).
 
 So first, clone the project ate recursive mode:
 

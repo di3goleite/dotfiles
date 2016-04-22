@@ -22,7 +22,7 @@ $ sudo dnf install git tmux ctags ncurses the_silver_searcher
 
 ## Installation
 
-See: How to install nVim on your Linux
+**See:** How to install nVim on your Linux computer
 - [Ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
 - [Fedora](https://github.com/neovim/neovim/wiki/Installing-Neovim#fedora-2122)
 

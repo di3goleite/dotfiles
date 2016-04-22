@@ -11,16 +11,20 @@ The distribution is designed to work with latest nVim and tmux.
 * Ubuntu
 
 ```
-$ sudo apt-get install git exuberant-ctags ncurses-term silversearcher-ag
+$ sudo apt-get install git tmux exuberant-ctags ncurses-term silversearcher-ag
 ```
 
 * Fedora
 
 ```
-$ sudo dnf install git ctags ncurses the_silver_searcher
+$ sudo dnf install git tmux ctags ncurses the_silver_searcher
 ```
 
 ## Installation
+
+See: How to install nVim on your Linux
+- [Ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
+- [Fedora](https://github.com/neovim/neovim/wiki/Installing-Neovim#fedora-2122)
 
 First, clone the project ate recursive mode:
 
@@ -31,7 +35,7 @@ git clone --recursive git@github.com:di3goleite/dotfiles.git
 To install nVim config:
 
 ```
-mv init.vim bundle/ ~/.config/nvim
+cp -r init.vim bundle/ ~/.config/nvim
 ```
 
 Then execute this command inside the nVim editor:
@@ -43,7 +47,7 @@ Then execute this command inside the nVim editor:
 For tmux, just move tmux.conf file to the correct path:
 
 ```
-mv tmux.conf ~/.tmux.conf
+cp tmux.conf ~/.tmux.conf
 ```
 
 ## Commands

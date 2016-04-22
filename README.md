@@ -26,7 +26,9 @@ $ sudo dnf install git tmux ctags ncurses the_silver_searcher
 - [Ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
 - [Fedora](https://github.com/neovim/neovim/wiki/Installing-Neovim#fedora-2122)
 
-First, clone the project ate recursive mode:
+**See:** Install [Powerline Fonts](https://github.com/powerline/fonts) on your computer and choose a good Powerline font for your terminal
+
+So first, clone the project ate recursive mode:
 
 ```
 git clone --recursive git@github.com:di3goleite/dotfiles.git

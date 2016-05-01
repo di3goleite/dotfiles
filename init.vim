@@ -99,7 +99,8 @@ set noswapfile
 set ruler
 set number
 set t_Co=256
-" set cursorline
+set mouse-=a
+set cursorline
 set guioptions=egmrti
 
 syntax enable

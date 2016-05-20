@@ -40,6 +40,9 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/syntastic'
 Plugin 'sheerun/vim-polyglot'
 
+"" HTML                                                                                                                                                              
+Plugin 'gregsexton/MatchTag'
+
 "" Emmet
 Plugin 'mattn/emmet-vim'
 

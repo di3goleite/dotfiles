@@ -33,3 +33,14 @@ Unset proxy
 ```
 unset http_proxy
 ```
+
+Attach ssh key to current session
+
+```
+ssh-agent zsh
+```
+
+```
+ssh-add
+```
+

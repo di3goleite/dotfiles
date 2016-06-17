@@ -24,10 +24,10 @@
   bindsym $mod+Shift+q kill
 
   # change focus
-  bindsym $mod+j focus left
-  bindsym $mod+k focus down
-  bindsym $mod+l focus up
-  bindsym $mod+ccedilla focus right
+  bindsym $mod+h focus left
+  bindsym $mod+j focus down
+  bindsym $mod+k focus up
+  bindsym $mod+l focus right
 
   # alternatively, you can use the cursor keys:
   bindsym $mod+Left focus left
@@ -53,10 +53,10 @@
   bindsym $mod+e layout toggle split
 
   # split in horizontal orientation
-  bindsym $mod+h split |
+  bindsym $mod+backslash split h
 
   # split in vertical orientation
-  bindsym $mod+v split -
+  bindsym $mod+minus split v
 
   # change focus between tiling / floating windows
   bindsym $mod+space focus mode_toggle

@@ -14,6 +14,20 @@ The distribution is designed to work with latest nVim and tmux.
 $ sudo apt-get install git tmux exuberant-ctags ncurses-term silversearcher-ag
 ```
 
+* i3 Window Manager
+
+```
+$ sudo apt-get install lxappearance pavucontrol thunar amixer
+```
+
+```
+playerctl: https://github.com/acrisci/playerctl
+```
+
+```
+light: https://github.com/haikarainen/light
+```
+
 * Fedora
 
 ```
@@ -50,6 +64,12 @@ For tmux, just move tmux.conf file to the correct path:
 
 ```
 cp tmux.conf ~/.tmux.conf
+```
+
+For i3, just move conf file to i3 config folder:
+
+```
+cp conf ~/.config/i3/conf
 ```
 
 ## Commands

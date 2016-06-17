@@ -149,12 +149,12 @@
 
 # Bar
   bar {
-    status_command i3status
+	status_command i3status -c ~/.config/i3/i3status.conf
     position bottom
     tray_output primary
   }
 
 # Invert Caps Lock and EscapePlay
-exec_always xmodmap -e "clear Lock"
-exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+  exec_always xmodmap -e "clear Lock"
+  exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+  exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"

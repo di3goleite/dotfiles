@@ -4,9 +4,13 @@ My nVim and tmux dotfiles.
 
 ## Pre-requisites
 
-The distribution is designed to work with latest nVim and tmux.
+The distribution is designed to work with latest nVim, tmux and i3wm.
 
 ## Dependencies
+
+* Fonts:
+
+Awesome Fonts: https://github.com/FortAwesome/Font-Awesome
 
 * Ubuntu
 
@@ -70,6 +74,10 @@ For i3, just move conf file to i3 config folder:
 
 ```
 cp conf ~/.config/i3/conf
+```
+
+```
+cp i3status.conf ~/.config/i3/i3status.conf
 ```
 
 ## Commands

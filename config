@@ -6,7 +6,7 @@
   set $workspace3 "3: "
   set $workspace4 "4: "
   set $workspace5 "5: "
-  set $workspace6 "6: "
+  set $workspace6 "6: "
   set $workspace7 "7: "
   set $workspace8 "8: "
   set $workspace9 "9: "
@@ -132,7 +132,15 @@
   workspace $workspace10 output $monitor1
 
 # Program Workspaces
-  assign [class="Chrome"] $workspace1
+  assign [class="google-chrome"] $workspace1
+  assign [class="Atom"] $workspace3
+  assign [class="Slack"] $workspace4
+  assign [class="Thunar"] $workspace5
+  assign [class="Gimp"] $workspace6
+  assign [class="Inkscape"] $workspace6
+  assign [class="Steam"] $workspace7
+  assign [class="vlc"] $workspace8
+  assign [class="Skype"] $workspace9
   assign [class="Spotify"] $workspace10
 
 # Floating
@@ -146,7 +154,7 @@
     tray_output primary
   }
 
-# Invert Caps Lock and Escape
+# Invert Caps Lock and EscapePlay
 exec_always xmodmap -e "clear Lock"
 exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
 exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"

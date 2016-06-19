@@ -4,8 +4,8 @@
   set $workspace1 "1: "
   set $workspace2 "2: "
   set $workspace3 "3: "
-  set $workspace4 "4: "
-  set $workspace5 "5: "
+  set $workspace4 "4: "
+  set $workspace5 "5: "
   set $workspace6 "6: "
   set $workspace7 "7: "
   set $workspace8 "8: "
@@ -132,10 +132,10 @@
   workspace $workspace10 output $monitor1
 
 # Program Workspaces
-  assign [class="google-chrome"] $workspace1
+  # assign [class="google-chrome"] $workspace1
   assign [class="Atom"] $workspace3
-  assign [class="Slack"] $workspace4
-  assign [class="Thunar"] $workspace5
+  assign [class="Thunar"] $workspace4
+  assign [class="Slack"] $workspace5
   assign [class="Gimp"] $workspace6
   assign [class="Inkscape"] $workspace6
   assign [class="Steam"] $workspace7

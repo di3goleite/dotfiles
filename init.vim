@@ -18,6 +18,7 @@ Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'yggdroot/indentline'
 
 " File
 Plugin 'scrooloose/nerdtree'
@@ -40,7 +41,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'scrooloose/syntastic'
 Plugin 'sheerun/vim-polyglot'
 
-"" HTML                                                                                                                                                              
+"" HTML
 Plugin 'gregsexton/MatchTag'
 
 "" Emmet
@@ -74,11 +75,13 @@ let mapleader=','
 " Fix backspace indent
 set backspace=indent,eol,start
 
-" Tabs. May be overriten by autocmd rules
-set tabstop=4
-set softtabstop=0
-set shiftwidth=4
+" Indentation rules
 set expandtab
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set smartindent
+set cindent
 
 " Enable hidden buffers
 set hidden
@@ -137,6 +140,7 @@ endif
 
 " vim-airline
 let g:airline_theme = 'powerlineish'
+" let g:airline_theme = 'solarized'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1

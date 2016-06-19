@@ -18,7 +18,7 @@ Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
-" Plugin 'yggdroot/indentline'
+Plugin 'yggdroot/indentline'
 
 " File
 Plugin 'scrooloose/nerdtree'
@@ -52,13 +52,13 @@ Plugin 'StanAngeloff/php.vim'
 Plugin 'jwalton512/vim-blade'
 
 "" JavaScript
-" Plugin 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 Plugin 'nono/jquery.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
-" filetype plugin indent on    " required
+filetype plugin indent on    " required
 
 "*****************************************************************************
 " Basic Setup
@@ -73,15 +73,15 @@ set fileencodings=utf-8
 let mapleader=','
 
 " Fix backspace indent
-" set backspace=indent,eol,start
+set backspace=indent,eol,start
 
 " Indentation rules
-" set expandtab
-" set shiftwidth=4
-" set softtabstop=4
-" set autoindent
-" set smartindent
-" set cindent
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+set autoindent
+set smartindent
+set cindent
 
 " Enable hidden buffers
 set hidden

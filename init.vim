@@ -75,14 +75,6 @@ let mapleader=','
 " Fix backspace indent
 set backspace=indent,eol,start
 
-" Indentation rules
-set expandtab
-set shiftwidth=4
-set softtabstop=4
-set autoindent
-set smartindent
-set cindent
-
 " Enable hidden buffers
 set hidden
 
@@ -95,6 +87,16 @@ set smartcase
 " Encoding
 set bomb
 set binary
+
+" Indentation rules
+set tabstop=8
+set softtabstop=0
+set expandtab
+set shiftwidth=4
+set smarttab
+set autoindent
+set smartindent
+set cindent
 
 " Disable swap files
 set noswapfile

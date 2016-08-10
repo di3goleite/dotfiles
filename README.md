@@ -15,7 +15,7 @@ Awesome Fonts: https://github.com/FortAwesome/Font-Awesome
 * Ubuntu
 
 ```
-$ sudo apt-get install git tmux exuberant-ctags ncurses-term silversearcher-ag
+$ sudo apt-get install git tmux exuberant-ctags ncurses-term silversearcher-ag xclip
 ```
 
 * i3 Window Manager
@@ -35,7 +35,7 @@ light: https://github.com/haikarainen/light
 * Fedora
 
 ```
-$ sudo dnf install git tmux ctags ncurses the_silver_searcher
+$ sudo dnf install git tmux ctags ncurses the_silver_searcher xclip
 ```
 
 ## Installation

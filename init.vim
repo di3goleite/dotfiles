@@ -15,6 +15,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Interface
 Plugin 'tomasr/molokai'
+Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
@@ -54,6 +55,7 @@ Plugin 'jwalton512/vim-blade'
 "" JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'nono/jquery.vim'
+Plugin 'elzr/vim-json'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -114,6 +116,7 @@ set guioptions=egmrti
 syntax enable
 set background=dark
 colorscheme molokai
+" colorscheme PaperColor
 
 if &term =~ '256color'
   set t_ut=
@@ -143,6 +146,7 @@ endif
 " vim-airline
 let g:airline_theme = 'powerlineish'
 " let g:airline_theme = 'solarized'
+" let g:airline_theme = 'papercolor'
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1

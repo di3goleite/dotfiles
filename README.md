@@ -1,10 +1,10 @@
 # dotfiles
 
-My nVim and tmux dotfiles.
+My vim, tmux and i3wm dotfiles.
 
 ## Pre-requisites
 
-The distribution is designed to work with latest nVim, tmux and i3wm.
+The distribution is designed to work with latest vim, tmux and i3wm.
 
 ## Dependencies
 
@@ -15,7 +15,7 @@ Awesome Fonts: https://github.com/FortAwesome/Font-Awesome
 * Ubuntu
 
 ```
-$ sudo apt-get install git tmux exuberant-ctags ncurses-term silversearcher-ag xclip
+$ sudo apt-get install git vim tmux exuberant-ctags ncurses-term silversearcher-ag xclip
 ```
 
 * i3 Window Manager
@@ -35,34 +35,43 @@ light: https://github.com/haikarainen/light
 * Fedora
 
 ```
-$ sudo dnf install git tmux ctags ncurses the_silver_searcher xclip
+$ sudo dnf install git vim tmux ctags ncurses the_silver_searcher xclip
 ```
 
 ## Installation
 
-**See:** How to install nVim on your Linux computer
-- [Ubuntu](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
-- [Fedora](https://github.com/neovim/neovim/wiki/Installing-Neovim#fedora-2122)
-
 **See:** Install [Powerline Fonts](https://github.com/powerline/fonts) on your computer and choose a good Powerline font for your terminal. My favorite is: [Source Code Pro for Powerline](https://github.com/powerline/fonts/tree/master/SourceCodePro).
 
-So first, clone the project ate recursive mode:
+So first, clone the project at the recursive mode:
 
 ```
 git clone --recursive git@github.com:di3goleite/dotfiles.git
 ```
 
-To install nVim config:
+To install vim config:
 
 ```
-cp -r init.vim bundle/ ~/.config/nvim
+cp vimrc ~/.vimrc
 ```
 
-Then execute this command inside the nVim editor:
+and
+
+```
+cp -r bundle/ ~/.vim/bundle
+```
+
+Then execute this command inside the vim editor:
 
 ```
 :PluginInstall
 ```
+
+For code completion support with [YouCompleteMe](https://github.com/valloric/youcompleteme), do:
+
+```
+cd ~/.vim/bundle/YouCompleteMe && ./install.py --all
+```
+
 
 For tmux, just move tmux.conf file to the correct path:
 

@@ -69,7 +69,7 @@ Then execute this command inside the vim editor:
 For code completion support with [YouCompleteMe](https://github.com/valloric/youcompleteme), do:
 
 ```
-cd ~/.vim/bundle/youcompleteme && ./install.py --all
+cd ~/.vim/bundle/youcompleteme && ./install.py --tern-completer
 ```
 
 

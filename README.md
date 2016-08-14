@@ -72,6 +72,11 @@ For code completion support with [YouCompleteMe](https://github.com/valloric/you
 cd ~/.vim/bundle/youcompleteme && ./install.py --tern-completer
 ```
 
+Copy tern-config to the right path:
+
+```
+cp tern-config ~/.tern-config
+```
 
 For tmux, just move tmux.conf file to the correct path:
 

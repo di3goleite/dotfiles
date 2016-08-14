@@ -37,16 +37,16 @@ Plugin 'tpope/vim-commentary'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'Chiel92/vim-autoformat'
 
 " Languages
 Plugin 'scrooloose/syntastic'
 Plugin 'sheerun/vim-polyglot'
 
 "" HTML
-Plugin 'gregsexton/MatchTag'
-
-"" Emmet
 Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'gregsexton/MatchTag'
 
 "" PHP
 Plugin 'StanAngeloff/php.vim'
@@ -54,8 +54,12 @@ Plugin 'jwalton512/vim-blade'
 
 "" JavaScript
 Plugin 'pangloss/vim-javascript'
-Plugin 'nono/jquery.vim'
+Plugin 'othree/yajs.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'gavocanov/vim-js-indent'
+Plugin 'maksimr/vim-jsbeautify'
 Plugin 'elzr/vim-json'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -205,6 +209,7 @@ endif
 let g:ag_working_path_mode="r"
 
 " syntastic
+let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'

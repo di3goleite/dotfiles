@@ -38,6 +38,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'valloric/youcompleteme'
 
 " Languages
 Plugin 'scrooloose/syntastic'

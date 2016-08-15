@@ -78,6 +78,13 @@ Copy tern-config to the right path:
 cp tern-config ~/.tern-config
 ```
 
+Copy jshintrc to the right path:
+
+```
+cp jshintrc ~/.jshintrc
+```
+
+
 For tmux, just move tmux.conf file to the correct path:
 
 ```

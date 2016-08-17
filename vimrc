@@ -15,11 +15,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Interface
 Plugin 'tomasr/molokai'
+Plugin 'itchyny/lightline.vim'
 Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'yggdroot/indentline'
 
 " File
 Plugin 'scrooloose/nerdtree'
@@ -32,34 +30,23 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Utilities
-Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'Chiel92/vim-autoformat'
-Plugin 'valloric/youcompleteme'
+" Plugin 'valloric/youcompleteme'
 
 " Languages
 Plugin 'scrooloose/syntastic'
-Plugin 'sheerun/vim-polyglot'
 
-"" HTML
-Plugin 'mattn/emmet-vim'
+" HTML
 Plugin 'othree/html5.vim'
 Plugin 'gregsexton/MatchTag'
 
-"" PHP
-Plugin 'StanAngeloff/php.vim'
-Plugin 'jwalton512/vim-blade'
-
-"" JavaScript
-Plugin 'pangloss/vim-javascript'
+" JavaScript
 Plugin 'othree/yajs.vim'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'gavocanov/vim-js-indent'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'elzr/vim-json'
 Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
@@ -148,15 +135,6 @@ if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
 
-" vim-airline
-let g:airline_theme = 'powerlineish'
-" let g:airline_theme = 'solarized'
-" let g:airline_theme = 'papercolor'
-let g:airline#extensions#syntastic#enabled = 1
-let g:airline#extensions#branch#enabled = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
-
 "*****************************************************************************
 " Autocmd Rules
 "*****************************************************************************
@@ -219,24 +197,77 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_auto_loc_list=1
 let g:syntastic_aggregate_errors = 1
 
-" Set airline symbols
-let g:airline_symbols = {}
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
+" JSX syntax highlighting
+let g:jsx_ext_required=0
 
-" Use powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
+" lightline
+let g:lightline = {
+    \ 'colorscheme': 'powerline',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'fugitive', 'filename' ] ]
+    \ },
+    \ 'component_function': {
+    \   'fugitive': 'LightLineFugitive',
+    \   'readonly': 'LightLineReadonly',
+    \   'modified': 'LightLineModified',
+    \   'filename': 'LightLineFilename',
+    \   'ctrlpmark': 'CtrlPMark'
+    \ },
+    \ 'separator': { 'left': '', 'right': '' },
+    \ 'subseparator': { 'left': '', 'right': '' }
+    \ }
+
+function! LightLineModified()
+    if &filetype == "help"
+        return ""
+    elseif &modified
+        return "+"
+    elseif &modifiable
+        return ""
+    else
+        return ""
+    endif
+endfunction
+
+function! LightLineReadonly()
+    if &filetype == "help"
+        return ""
+    elseif &readonly
+        return ""
+    else
+        return ""
+    endif
+endfunction
+
+function! LightLineFugitive()
+    if exists("*fugitive#head")
+        let branch = fugitive#head()
+        return branch !=# '' ? ' '.branch : ''
+    endif
+    return ''
+endfunction
+
+function! LightLineFilename()
+    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
+        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
+        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
+endfunction
+
+function! CtrlPMark()
+    if expand('%:t') =~ 'ControlP' && has_key(g:lightline, 'ctrlp_item')
+        call lightline#link('iR'[g:lightline.ctrlp_regex])
+        return lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
+            \ , g:lightline.ctrlp_next], 0)
+    else
+        return ''
+    endif
+endfunction
 
 " Fix PHP syntax
 function! PhpSyntaxOverride()
-  hi! def link phpDocTags  phpDefine
-  hi! def link phpDocParam phpType
+    hi! def link phpDocTags  phpDefine
+    hi! def link phpDocParam phpType
 endfunction
 
 "*****************************************************************************

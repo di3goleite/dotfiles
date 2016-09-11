@@ -94,7 +94,7 @@ cp tmux.conf ~/.tmux.conf
 For i3, just move conf file to i3 config folder:
 
 ```
-cp conf ~/.config/i3/conf
+cp config ~/.config/i3/config
 ```
 
 ```

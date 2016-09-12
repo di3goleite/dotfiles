@@ -32,10 +32,9 @@ playerctl: https://github.com/acrisci/playerctl
 light: https://github.com/haikarainen/light
 ```
 
-See: [How to set thunar as default file manager](http://askubuntu.com/a/664308)
+**See:** [How to set thunar as default file manager](http://askubuntu.com/a/664308)
 
 To set a wallpaper, go to the bottom of config file and add: `exec_always feh --bg-scale /home/diego/Pictures/Wallpapers/aurora-borealis.jpg`
-
 
 * Fedora
 
@@ -105,6 +104,32 @@ cp config ~/.config/i3/config
 ```
 cp i3status.conf ~/.config/i3/i3status.conf
 ```
+
+
+## Useful commands to work with **i3wm**
+
+### List monitors and hdmi devices:
+sudo xrandr --prop
+
+### List Wifi network available:
+sudo iwlist wlp8s0 scan | grep SSID
+
+### Connect to a Wifi network
+nmcli d wifi connect hue password 123tapioca
+
+### Change brightness (0-900):
+echo 0 | sudo tee /sys/class/backlight/acpi_video0/brightness
+
+### Set proxy:
+export http_proxy="10.65.16.2:3128"
+
+### Unset proxy
+unset http_proxy
+
+### Attach ssh key to current session
+ssh-agent zsh
+ssh-add
+
 
 ## Commands
 

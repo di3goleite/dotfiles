@@ -158,3 +158,6 @@
   exec_always xmodmap -e "clear Lock"
   exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
   exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+
+# Wallpaper
+  exec_always feh --bg-scale /home/diego/Pictures/Wallpapers/aurora-borealis.jpg

@@ -32,6 +32,9 @@ playerctl: https://github.com/acrisci/playerctl
 light: https://github.com/haikarainen/light
 ```
 
+See: [How to set thunar as default file manager](http://askubuntu.com/a/664308)
+
+
 * Fedora
 
 ```

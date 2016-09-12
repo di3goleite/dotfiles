@@ -34,6 +34,8 @@ light: https://github.com/haikarainen/light
 
 See: [How to set thunar as default file manager](http://askubuntu.com/a/664308)
 
+To set a wallpaper, go to the bottom of config file and add: `exec_always feh --bg-scale /home/diego/Pictures/Wallpapers/aurora-borealis.jpg`
+
 
 * Fedora
 

@@ -95,11 +95,15 @@ set cindent
 " Disable swap files
 set noswapfile
 
+" Improvements
+set autoread " reload files when changed on disk, i.e. via `git checkout`
+
 "*****************************************************************************
 " Visual Settings
 "*****************************************************************************
 set ruler
 set number
+set relativenumber " use relative line instead of absolute
 set t_Co=256
 set mouse-=a
 set cursorline

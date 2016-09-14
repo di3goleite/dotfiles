@@ -34,7 +34,6 @@ Plugin 'tpope/vim-commentary'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bronson/vim-trailing-whitespace'
-" Plugin 'valloric/youcompleteme'
 
 " Languages
 Plugin 'scrooloose/syntastic'

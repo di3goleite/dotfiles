@@ -70,18 +70,6 @@ Then execute this command inside the vim editor:
 :PluginInstall
 ```
 
-For code completion support with [YouCompleteMe](https://github.com/valloric/youcompleteme), do:
-
-```
-cd ~/.vim/bundle/youcompleteme && ./install.py --tern-completer
-```
-
-Copy tern-config to the right path:
-
-```
-cp tern-config ~/.tern-config
-```
-
 Copy jshintrc to the right path:
 
 ```

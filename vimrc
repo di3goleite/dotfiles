@@ -279,6 +279,10 @@ endfunction
 " Mappings
 "*****************************************************************************
 
+" replace currently selected text with default register
+" " without yanking it
+vnoremap p "_dP
+
 " NERDTree
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 nnoremap <silent> <C-l> :NERDTreeFind<CR>

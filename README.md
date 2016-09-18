@@ -32,6 +32,10 @@ playerctl: https://github.com/acrisci/playerctl
 light: https://github.com/haikarainen/light
 ```
 
+* How to remove i3
+
+`sudo apt-get remove dunst i3 i3-wm i3lock i3status suckless-tools thunar`
+
 * Set thunar as default file manager
 
 `gvfs-mime --set inode/directory Thunar.desktop`

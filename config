@@ -2,8 +2,8 @@
   set $mod Mod4
 
   set $workspace1 "1: "
-  set $workspace2 "2: "
-  set $workspace3 "3: "
+  set $workspace2 "2: "
+  set $workspace3 "3: "
   set $workspace4 "4: "
   set $workspace5 "5: "
   set $workspace6 "6: "
@@ -98,6 +98,9 @@
   bindsym XF86MonBrightnessUp exec light -A 5
   bindsym XF86MonBrightnessDown exec light -U 5
 
+  # Screenshot
+  bindsym Print exec gnome-screenshot
+
 # Workspace-Related Bindings
   bindsym $mod+1 workspace $workspace1
   bindsym $mod+2 workspace $workspace2
@@ -123,13 +126,18 @@
 
 # Workspace Monitors
   workspace $workspace1 output $monitor1
-  workspace $workspace2 output $monitor1
+  workspace $workspace2 output $monitor2
   workspace $workspace3 output $monitor1
   workspace $workspace4 output $monitor1
   workspace $workspace5 output $monitor1
   workspace $workspace6 output $monitor1
+  workspace $workspace7 output $monitor1
+  workspace $workspace8 output $monitor1
   workspace $workspace9 output $monitor1
   workspace $workspace10 output $monitor1
+
+  # Move workspace between monitors
+  bindsym $mod+m move workspace to output left
 
 # Program Workspaces
   # assign [class="google-chrome"] $workspace1
@@ -149,7 +157,7 @@
 
 # Bar
   bar {
-	status_command i3status -c ~/.config/i3/i3status.conf
+    status_command i3status -c ~/.config/i3/i3status.conf
     position bottom
     tray_output primary
   }
@@ -160,4 +168,15 @@
   exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # Wallpaper
-  exec_always feh --bg-scale /home/diego/Pictures/Wallpapers/aurora-borealis.jpg
+  exec_always feh --bg-scale /home/diego/Pictures/Wallpapers/aurora-lights.jpg
+
+  # Fix default notification system
+  exec killall -q notify-osd
+  exec --no-startup-id dunst -config
+
+  # Fix keyboard delay
+  exec --no-startup-id xset r rate 300 35
+
+  # Natural scroll for touchpad
+  exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
+

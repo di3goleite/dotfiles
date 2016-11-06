@@ -141,8 +141,8 @@
 
 # Program Workspaces
   # assign [class="google-chrome"] $workspace1
-  assign [class="Atom"] $workspace3
-  assign [class="Thunar"] $workspace4
+  # assign [class="Atom"] $workspace3
+  # assign [class="Thunar"] $workspace4
   assign [class="Slack"] $workspace5
   assign [class="Gimp"] $workspace6
   assign [class="Inkscape"] $workspace6

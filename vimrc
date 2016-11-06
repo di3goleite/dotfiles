@@ -18,6 +18,9 @@ Plugin 'tomasr/molokai'
 Plugin 'itchyny/lightline.vim'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'dracula/vim'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'whatyouhide/vim-gotham'
 
 " File
 Plugin 'scrooloose/nerdtree'
@@ -110,10 +113,9 @@ set cursorline
 set guioptions=egmrti
 
 syntax enable
-" set background=dark
-" colorscheme molokai
-set background=light
-colorscheme PaperColor
+set background=dark
+" colorscheme vividchalk
+colorscheme gotham
 
 if &term =~ '256color'
   set t_ut=
@@ -207,7 +209,7 @@ let g:jsx_ext_required=0
 
 " lightline
 let g:lightline = {
-    \ 'colorscheme': 'PaperColor',
+    \ 'colorscheme': 'gotham',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive', 'filename' ] ]

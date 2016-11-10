@@ -21,7 +21,7 @@ $ sudo apt-get install git vim tmux exuberant-ctags ncurses-term silversearcher-
 * i3 Window Manager
 
 ```
-$ sudo apt-get install i3 rofi feh arandr lxappearance pavucontrol thunar amixer
+$ sudo apt-get install i3 rofi feh arandr lxappearance pavucontrol thunar thunar-archive-plugin amixer
 ```
 
 ```

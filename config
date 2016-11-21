@@ -4,8 +4,8 @@
   set $workspace1 "1: "
   set $workspace2 "2: "
   set $workspace3 "3: "
-  set $workspace4 "4: "
-  set $workspace5 "5: "
+  set $workspace4 "4: "
+  set $workspace5 "5: "
   set $workspace6 "6: "
   set $workspace7 "7: "
   set $workspace8 "8: "
@@ -142,8 +142,8 @@
 # Program Workspaces
   # assign [class="google-chrome"] $workspace1
   # assign [class="Atom"] $workspace3
-  # assign [class="Thunar"] $workspace4
-  assign [class="Slack"] $workspace5
+  assign [class="Slack"] $workspace4
+  # assign [class="Thunar"] $workspace5
   assign [class="Gimp"] $workspace6
   assign [class="Inkscape"] $workspace6
   assign [class="Steam"] $workspace7
@@ -180,3 +180,5 @@
   # Natural scroll for touchpad
   exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
+# Network
+  exec --no-startup-id nm-applet

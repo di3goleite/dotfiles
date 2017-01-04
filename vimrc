@@ -48,9 +48,9 @@ Plugin 'gregsexton/MatchTag'
 
 " JavaScript
 Plugin 'othree/yajs.vim'
-Plugin 'othree/javascript-libraries-syntax.vim'
+" Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'gavocanov/vim-js-indent'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -86,10 +86,10 @@ set bomb
 set binary
 
 " Indentation rules
-set tabstop=8
+set tabstop=4
 set softtabstop=0
 set expandtab
-set shiftwidth=4
+set shiftwidth=2
 set smarttab
 set autoindent
 set smartindent
@@ -114,8 +114,7 @@ set guioptions=egmrti
 
 syntax enable
 set background=dark
-" colorscheme vividchalk
-colorscheme gotham
+colorscheme molokai
 
 if &term =~ '256color'
   set t_ut=
@@ -209,7 +208,6 @@ let g:jsx_ext_required=0
 
 " lightline
 let g:lightline = {
-    \ 'colorscheme': 'gotham',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive', 'filename' ] ]

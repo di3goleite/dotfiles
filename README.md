@@ -146,7 +146,8 @@ Commands | Descriptions
 `Ctrl+t`  | Open/Close tree navigate files
 `,v` | Split vertical
 `,h` | Split horizontal
-`,ga` | Execute *git add* on current file
+`,ga` | Execute *git add --all*
+`,gw` | Execute *git add* on current file
 `,gc` | git commit (splits window to write commit message)
 `,gsh` | git push
 `,gll` | git pull

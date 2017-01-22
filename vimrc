@@ -312,7 +312,8 @@ noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 " Git
-noremap <Leader>ga :Gwrite<CR>
+noremap <Leader>ga :Git add --all<CR><CR>
+noremap <Leader>gw :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>

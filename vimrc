@@ -33,24 +33,36 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Utilities
+Plugin 'majutsushi/tagbar'
+Plugin 'ervandew/supertab'
+Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-commentary'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'ap/vim-css-color'
+Plugin 'gko/vim-coloresque'
 
 " Languages
 Plugin 'scrooloose/syntastic'
 
 " HTML
 Plugin 'othree/html5.vim'
+Plugin 'mattn/emmet-vim'
 Plugin 'gregsexton/MatchTag'
+
+" CSS
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'wavded/vim-stylus'
+Plugin 'groenewege/vim-less'
 
 " JavaScript
 Plugin 'othree/yajs.vim'
-" Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'gavocanov/vim-js-indent'
-" Plugin 'mxw/vim-jsx'
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -190,7 +202,7 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 " CtrlP
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
-let g:ctrlp_custom_ignore = '\v[\/](node_modules|target|dist|vendor)|(\.(swp|tox|ico|git|hg|svn))$'
+let g:ctrlp_custom_ignore = '\v[\/](node_modules|bower_components|target|dist|vendor)|(\.(swp|tox|ico|git|hg|svn))$'
 let g:ctrlp_user_command = "find %s -type f | grep -Ev '"+ g:ctrlp_custom_ignore +"'"
 let g:ctrlp_use_caching = 1
 let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'

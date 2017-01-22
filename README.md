@@ -135,7 +135,8 @@ Commands | Descriptions
 `:cd <path>` | Open path */path*
 `<Ctrl+w>+<hjkl>` | Navigate via split panels
 `<Ctrl>+w+w` | Alternative navigate vim split panels
-`,.` | Set path working directory
+`,.` | Starts EasyMotion
+`,,w` | Set path working directory
 `,w or ,x` | Next buffer navigate
 `,q or ,z` | previous buffer navigate
 `Shift+t` | Create a tab

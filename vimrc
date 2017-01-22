@@ -344,15 +344,15 @@ if has('gui_running')
   set guifont=Fira\ Code\ Light:h14
   set ttyfast
   set mouse=a
-  colorscheme solarized
+  colorscheme gotham
   au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
 
   " Disable bold text
-  set t_Co=8 t_md= 
+  set t_Co=8 t_md=
 
   " lightline
   let g:lightline = {
-    \ 'colorscheme': 'solarized',
+    \ 'colorscheme': 'gotham256',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
     \             [ 'fugitive', 'filename' ] ]
@@ -432,17 +432,17 @@ if has('gui_running')
   " they are now just differently saturated and
   " valued riffs on the background color, making
   " everything play together just a little more nicely.
-  hi! VertSplit guifg=#003745 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
-  hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=146
-  hi! link NonText VertSplit
-  hi! Normal guifg=#77A5B1
-  hi! Constant guifg=#00BCE0
-  hi! Comment guifg=#52737B
-  hi! link htmlLink Include
-  hi! CursorLine cterm=NONE gui=NONE
-  hi! Visual ctermbg=233
-  hi! Type gui=bold
-  hi! EasyMotionTarget ctermfg=100 guifg=#4CE660 gui=bold
+  " hi! VertSplit guifg=#003745 cterm=NONE term=NONE ctermfg=NONE ctermbg=NONE
+  " hi! LineNR guifg=#004C60 gui=bold guibg=#002B36 ctermfg=146
+  " hi! link NonText VertSplit
+  " hi! Normal guifg=#77A5B1
+  " hi! Constant guifg=#00BCE0
+  " hi! Comment guifg=#52737B
+  " hi! link htmlLink Include
+  " hi! CursorLine cterm=NONE gui=NONE
+  " hi! Visual ctermbg=233
+  " hi! Type gui=bold
+  " hi! EasyMotionTarget ctermfg=100 guifg=#4CE660 gui=bold
 endif
 
 

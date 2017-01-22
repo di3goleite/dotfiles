@@ -120,6 +120,14 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+if has('gui_running')
+  set macligatures
+  set guifont=Fira\ Code\ Light:h14
+  set ttyfast
+  set mouse=a
+  au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
+endif
+
 " Disable the blinking cursor.
 set gcr=a:blinkon0
 set scrolloff=3

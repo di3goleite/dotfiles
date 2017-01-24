@@ -59,7 +59,7 @@ Plugin 'wavded/vim-stylus'
 Plugin 'groenewege/vim-less'
 
 " JavaScript
-Plugin 'othree/yajs.vim'
+Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'gavocanov/vim-js-indent'
 Plugin 'mxw/vim-jsx'

@@ -108,7 +108,7 @@ set smartindent
 set cindent
 
 " Enable copy and past to clipboard
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " Disable swap files
 set noswapfile

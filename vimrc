@@ -21,6 +21,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'dracula/vim'
 Plugin 'tpope/vim-vividchalk'
 Plugin 'whatyouhide/vim-gotham'
+Plugin 'ryanoasis/vim-devicons'
 
 " File
 Plugin 'scrooloose/nerdtree'
@@ -344,11 +345,13 @@ vnoremap K :m '<-2<CR>gv=gv
 
 if has('gui_running')
   set macligatures
-  set guifont=Fira\ Code\ Light:h14
+  set guifont=FuraCode\ Nerd\ Font:h14
   set ttyfast
   set mouse=a
   colorscheme gotham
   au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
+  let g:webdevicons_enable = 1
+  let g:webdevicons_enable_nerdtree = 1
 
   " Disable bold text
   set t_Co=8 t_md=
@@ -361,15 +364,20 @@ if has('gui_running')
     \             [ 'fugitive', 'filename' ] ]
     \ },
     \ 'component_function': {
-    \   'fugitive': 'LightLineFugitive',
-    \   'readonly': 'LightLineReadonly',
-    \   'modified': 'LightLineModified',
-    \   'filename': 'LightLineFilename',
-    \   'ctrlpmark': 'CtrlPMark'
+    \   'filetype': 'MyFiletype',
+    \   'fileformat': 'MyFileformat',
     \ },
     \ 'separator': { 'left': '', 'right': '' },
     \ 'subseparator': { 'left': '', 'right': '' }
     \ }
+
+  function! MyFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+  endfunction
+
+  function! MyFileformat()
+    return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+  endfunction
 
   " From Yadr
   hi! link txtBold Identifier

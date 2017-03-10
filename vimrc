@@ -210,6 +210,7 @@ endif
 let g:ag_working_path_mode="r"
 
 " syntastic
+let g:syntastic_html_checkers=['']
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_error_symbol='✗'

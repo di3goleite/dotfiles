@@ -43,6 +43,7 @@ Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'ap/vim-css-color'
 Plugin 'gko/vim-coloresque'
+Plugin 'tpope/vim-surround'
 
 " Languages
 Plugin 'scrooloose/syntastic'

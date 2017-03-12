@@ -195,6 +195,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+silent! exec s:prevWinnr'wincmd w'
 
 " CtrlP
 set wildmode=list:longest,list:full

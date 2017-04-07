@@ -25,6 +25,8 @@ Plugin 'whatyouhide/vim-gotham'
 " File
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs.git'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'taiansu/nerdtree-ag'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
 

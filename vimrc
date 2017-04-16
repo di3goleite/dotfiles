@@ -13,15 +13,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Interface
-Plugin 'tomasr/molokai'
-Plugin 'itchyny/lightline.vim'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'dracula/vim'
-Plugin 'tpope/vim-vividchalk'
-Plugin 'whatyouhide/vim-gotham'
-
 " File
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs.git'
@@ -133,7 +124,6 @@ set ttyfast
 
 syntax enable
 set background=dark
-colorscheme molokai
 
 if &term =~ '256color'
   set t_ut=
@@ -143,9 +133,6 @@ endif
 set gcr=a:blinkon0
 set scrolloff=3
 
-" Status bar
-set laststatus=2
-
 " Use modeline overrides
 set modeline
 set modelines=10
@@ -154,11 +141,14 @@ set title
 set titleold="Terminal"
 set titlestring=%F
 
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)\
+" Status bar
+set laststatus=2
 
-if exists("*fugitive#statusline")
-  set statusline+=%{fugitive#statusline()}
-endif
+set statusline=%F
+set statusline+=\ (%{fugitive#head()})
+set statusline+=\ %=
+set statusline+=(%{&ff}/%Y)
+set statusline+=\ (line\ %l\/%L,\ col\ %c)
 
 "*****************************************************************************
 " Autocmd Rules
@@ -226,69 +216,6 @@ let g:syntastic_aggregate_errors = 1
 
 " JSX syntax highlighting
 let g:jsx_ext_required=0
-
-" lightline
-let g:lightline = {
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'fugitive', 'filename' ] ]
-    \ },
-    \ 'component_function': {
-    \   'fugitive': 'LightLineFugitive',
-    \   'readonly': 'LightLineReadonly',
-    \   'modified': 'LightLineModified',
-    \   'filename': 'LightLineFilename',
-    \   'ctrlpmark': 'CtrlPMark'
-    \ },
-    \ 'separator': { 'left': '', 'right': ''  },
-    \ 'subseparator': { 'left': '', 'right': ''  }
-    \ }
-
-function! LightLineModified()
-    if &filetype == "help"
-        return ""
-    elseif &modified
-        return "+"
-    elseif &modifiable
-        return ""
-    else
-        return ""
-    endif
-endfunction
-
-function! LightLineReadonly()
-    if &filetype == "help"
-        return ""
-    elseif &readonly
-        return ""
-    else
-        return ""
-    endif
-endfunction
-
-function! LightLineFugitive()
-    if exists("*fugitive#head")
-        let branch = fugitive#head()
-        return branch !=# '' ? ' '.branch : ''
-    endif
-    return ''
-endfunction
-
-function! LightLineFilename()
-    return ('' != LightLineReadonly() ? LightLineReadonly() . ' ' : '') .
-        \ ('' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != LightLineModified() ? ' ' . LightLineModified() : '')
-endfunction
-
-function! CtrlPMark()
-    if expand('%:t') =~ 'ControlP' && has_key(g:lightline, 'ctrlp_item')
-        call lightline#link('iR'[g:lightline.ctrlp_regex])
-        return lightline#concatenate([g:lightline.ctrlp_prev, g:lightline.ctrlp_item
-            \ , g:lightline.ctrlp_next], 0)
-    else
-        return ''
-    endif
-endfunction
 
 " Fix PHP syntax
 function! PhpSyntaxOverride()

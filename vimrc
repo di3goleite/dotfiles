@@ -115,10 +115,11 @@ set autoread " reload files when changed on disk, i.e. via `git checkout`
 "*****************************************************************************
 set ruler
 set number
-set relativenumber " use relative line instead of absolute
+set relativenumber
 set t_Co=256
 set mouse-=a
 set cursorline
+set synmaxcol=250
 set guioptions=egmrti
 set ttyfast
 
@@ -129,7 +130,7 @@ if &term =~ '256color'
   set t_ut=
 endif
 
-" Disable the blinking cursor.
+" Disable the blinking cursor
 set gcr=a:blinkon0
 set scrolloff=3
 

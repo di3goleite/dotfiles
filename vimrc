@@ -60,6 +60,7 @@ Plugin 'groenewege/vim-less'
 " JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'gavocanov/vim-js-indent'
 Plugin 'mxw/vim-jsx'
 

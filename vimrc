@@ -64,6 +64,9 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'gavocanov/vim-js-indent'
 Plugin 'mxw/vim-jsx'
 
+" PHP
+Plugin 'jwalton512/vim-blade'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 
@@ -251,6 +254,16 @@ function! PhpSyntaxOverride()
     hi! def link phpDocTags  phpDefine
     hi! def link phpDocParam phpType
 endfunction
+
+" Laravel Blade Syntax
+" Define some single Blade directives. This variable is used for highlighting only.
+let g:blade_custom_directives = ['datetime', 'javascript']
+
+" Define pairs of Blade directives. This variable is used for highlighting and indentation.
+let g:blade_custom_directives_pairs = {
+  \   'markdown': 'endmarkdown',
+  \   'cache': 'endcache',
+  \ }
 
 "*****************************************************************************
 " Mappings

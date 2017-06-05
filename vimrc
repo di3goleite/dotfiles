@@ -252,6 +252,9 @@ function! PhpSyntaxOverride()
     hi! def link phpDocParam phpType
 endfunction
 
+" Force vim to indent a blade file as html
+au BufReadPost *.blade.php set filetype=html
+
 "*****************************************************************************
 " Mappings
 "*****************************************************************************

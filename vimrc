@@ -179,6 +179,12 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 
+" MacVim gui options
+if has('gui_running')
+  set guifont=Inconsolata-dz\ for\ Powerline:h12
+  au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
+endif
+
 "*****************************************************************************
 " Autocmd Rules
 "*****************************************************************************

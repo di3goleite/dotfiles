@@ -20,7 +20,6 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " File
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs.git'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'taiansu/nerdtree-ag'
 Plugin 'kien/ctrlp.vim'
@@ -217,10 +216,10 @@ let g:NERDTreeChDirMode=2
 let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__']
 let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
-let g:nerdtree_tabs_focus_on_files=1
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 30
+let g:NERDTreeMinimalUI=1
+let g:NERDTreeDirArrows=1
+" let g:NERDTreeQuitOnOpen=1
+let g:NERDTreeWinSize=30
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 silent! exec s:prevWinnr'wincmd w'
 
@@ -298,12 +297,6 @@ nnoremap <leader>. :lcd %:p:h<CR>
 
 " Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
-
-" snippets
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-let g:UltiSnipsEditSplit="vertical"
 
 " Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv

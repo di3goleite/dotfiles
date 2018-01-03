@@ -20,7 +20,6 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " File
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'taiansu/nerdtree-ag'
 Plugin 'kien/ctrlp.vim'
@@ -193,6 +192,8 @@ augroup phpSyntaxOverride
   autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 set autoread
 
 "*****************************************************************************
@@ -207,9 +208,7 @@ let g:NERDTreeShowBookmarks=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeDirArrows=1
 let g:NERDTreeWinSize=30
-let g:nerdtree_tabs_focus_on_files=1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
-silent! exec s:prevWinnr'wincmd w'
 
 " CtrlP
 set wildmode=list:longest,list:full

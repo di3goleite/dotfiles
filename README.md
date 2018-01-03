@@ -2,6 +2,10 @@
 
 My vim, tmux and i3wm dotfiles.
 
+## Screenshot
+
+![First Version](assets/screenshot.png)
+
 ## Pre-requisites
 
 The distribution is designed to work with latest vim, tmux and i3wm.

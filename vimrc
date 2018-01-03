@@ -14,12 +14,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Interface
-Plugin 'tomasr/molokai'
+Plugin 'chriskempson/base16-vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 " File
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'taiansu/nerdtree-ag'
 Plugin 'kien/ctrlp.vim'
@@ -41,9 +42,6 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ap/vim-css-color'
 Plugin 'gko/vim-coloresque'
 Plugin 'tpope/vim-surround'
-
-" Languages
-Plugin 'scrooloose/syntastic'
 
 " HTML
 Plugin 'othree/html5.vim'
@@ -106,6 +104,9 @@ set autoindent
 set smartindent
 set cindent
 
+" Customize word separators
+set iskeyword+=_,$,@,%,#
+
 " Enable copy and past to clipboard
 set clipboard=unnamed
 
@@ -128,13 +129,12 @@ set synmaxcol=200
 set guioptions=egmrti
 set ttyfast
 
-syntax enable
-set background=dark
-colorscheme molokai
-
 if &term =~ '256color'
   set t_ut=
 endif
+
+syntax enable
+set background=dark
 
 " Disable the blinking cursor
 set gcr=a:blinkon0
@@ -158,29 +158,17 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'powerlineish'
-let g:airline#extensions#syntastic#enabled = 1
+let g:airline_theme = 'dark'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 
-" Set airline symbols
-let g:airline_symbols = {}
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-
-" Use powerline symbols
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-
 " MacVim gui options
 if has('gui_running')
-  set guifont=Inconsolata-dz\ for\ Powerline:h12
+  set guifont=Monaco:h14
+  let g:airline_theme='base16'
+  let base16colorspace=256
+  colorscheme base16-bright
   au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
 endif
 
@@ -218,8 +206,8 @@ let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks=1
 let g:NERDTreeMinimalUI=1
 let g:NERDTreeDirArrows=1
-" let g:NERDTreeQuitOnOpen=1
 let g:NERDTreeWinSize=30
+let g:nerdtree_tabs_focus_on_files=1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 silent! exec s:prevWinnr'wincmd w'
 
@@ -234,19 +222,11 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore '+ g:ctrlp_custom_ignore +' -g ""'
 endif
 
+" SuperTab
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " Ag
 let g:ag_working_path_mode="r"
-
-" syntastic
-let g:syntastic_html_checkers=['']
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol = '✗'
-let g:syntastic_style_warning_symbol = '⚠'
-let g:syntastic_auto_loc_list=1
-let g:syntastic_aggregate_errors = 1
 
 " JSX syntax highlighting
 let g:jsx_ext_required=0
@@ -265,7 +245,7 @@ au BufReadPost *.blade.php set filetype=html
 "*****************************************************************************
 
 " replace currently selected text with default register
-" " without yanking it
+" without yanking it
 vnoremap p "_dP
 
 " NERDTree
@@ -277,7 +257,6 @@ noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 " Git
-noremap <Leader>ga :Git add --all<CR><CR>
 noremap <Leader>gw :Gwrite<CR>
 noremap <Leader>gc :Gcommit<CR>
 noremap <Leader>gsh :Gpush<CR>

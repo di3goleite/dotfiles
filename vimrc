@@ -171,6 +171,9 @@ if has('gui_running')
   au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
 endif
 
+" Fix highlight foreground color
+hi Search guifg=Black
+
 "*****************************************************************************
 " Autocmd Rules
 "*****************************************************************************

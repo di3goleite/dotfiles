@@ -92,6 +92,10 @@ Copy jshintrc to the right path:
 cp jshintrc ~/.jshintrc
 ```
 
+For oh-my-zsh, just move zshrc file to the correct path:
+```
+cp zshrc ~/.zshrc
+```
 
 For tmux, just move tmux.conf file to the correct path:
 

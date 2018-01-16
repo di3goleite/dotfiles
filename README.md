@@ -19,7 +19,7 @@ Awesome Fonts: https://github.com/FortAwesome/Font-Awesome
 * Ubuntu
 
 ```
-$ sudo apt-get install git vim tmux exuberant-ctags ncurses-term silversearcher-ag xclip
+$ sudo apt-get install git vim zsh tmux exuberant-ctags ncurses-term silversearcher-ag xclip
 ```
 
 * i3 Window Manager

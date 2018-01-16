@@ -19,7 +19,7 @@ Awesome Fonts: https://github.com/FortAwesome/Font-Awesome
 * Ubuntu
 
 ```
-$ sudo apt-get install git vim zsh tmux exuberant-ctags ncurses-term silversearcher-ag xclip
+$ sudo apt-get install git vim zsh curl tmux exuberant-ctags ncurses-term silversearcher-ag xclip
 ```
 
 * i3 Window Manager
@@ -92,8 +92,10 @@ Copy jshintrc to the right path:
 cp jshintrc ~/.jshintrc
 ```
 
-For oh-my-zsh, just move zshrc file to the correct path:
+For oh-my-zsh, just need to [install it](https://github.com/robbyrussell/oh-my-zsh#via-curl) and move zshrc file to the correct path:
 ```
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 cp zshrc ~/.zshrc
 ```
 

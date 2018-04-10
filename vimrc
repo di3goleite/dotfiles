@@ -28,6 +28,7 @@ Plugin 'rking/ag.vim'
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'junegunn/gv.vim'
 
 " Utilities
 Plugin 'majutsushi/tagbar'
@@ -41,6 +42,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'ap/vim-css-color'
 Plugin 'gko/vim-coloresque'
 Plugin 'tpope/vim-surround'
+Plugin 'andrewradev/splitjoin.vim'
+Plugin 'vim-syntastic/syntastic'
 
 " HTML
 Plugin 'othree/html5.vim'
@@ -94,7 +97,7 @@ set bomb
 set binary
 
 " Indentation rules
-set tabstop=4
+set tabstop=2
 set softtabstop=0
 set expandtab
 set shiftwidth=2
@@ -157,7 +160,7 @@ if exists("*fugitive#statusline")
 endif
 
 " vim-airline
-let g:airline_theme = 'dark'
+let g:airline_theme='dark'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
@@ -224,11 +227,47 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor --ignore '+ g:ctrlp_custom_ignore +' -g ""'
 endif
 
+" Tagbar
+let g:tagbar_type_typescript = {
+  \ 'ctagsbin' : 'tstags',
+  \ 'ctagsargs' : '-f-',
+  \ 'kinds': [
+    \ 'e:enums:0:1',
+    \ 'f:function:0:1',
+    \ 't:typealias:0:1',
+    \ 'M:Module:0:1',
+    \ 'I:import:0:1',
+    \ 'i:interface:0:1',
+    \ 'C:class:0:1',
+    \ 'm:method:0:1',
+    \ 'p:property:0:1',
+    \ 'v:variable:0:1',
+    \ 'c:const:0:1',
+  \ ],
+  \ 'sort' : 0
+\ }
+
 " SuperTab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Ag
 let g:ag_working_path_mode="r"
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 1
+
+" Syntastic Checkers
+let g:syntastic_typescript_checkers=['tsc', 'tslint']
+let g:syntastic_typescript_tslint_exec='node_modules/.bin/tslint'
+
+let g:syntastic_html_checkers=['']
 
 " JSX syntax highlighting
 let g:jsx_ext_required=0
@@ -253,6 +292,9 @@ vnoremap p "_dP
 " NERDTree
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 nnoremap <silent> <C-l> :NERDTreeFind<CR>
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " Split
 noremap <Leader>h :<C-u>split<CR>

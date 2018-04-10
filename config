@@ -1,16 +1,13 @@
 # Constants
   set $mod Mod4
 
-  set $workspace1 "1: "
-  set $workspace2 "2: "
-  set $workspace3 "3: "
-  set $workspace4 "4: "
-  set $workspace5 "5: "
-  set $workspace6 "6: "
-  set $workspace7 "7: "
-  set $workspace8 "8: "
-  set $workspace9 "9: "
-  set $workspace10 "10: "
+  set $workspace1 "1: Vim"
+  set $workspace2 "2: Terminal"
+  set $workspace3 "3: Browser"
+  set $workspace4 "4: Slack"
+  set $workspace5 "5: Telegram"
+  set $workspace6 "6: Spotify"
+  set $workspace7 "7: Things"
 
   set $monitor1 "eDP-1"
   set $monitor2 "HDMI-1"
@@ -109,9 +106,6 @@
   bindsym $mod+5 workspace $workspace5
   bindsym $mod+6 workspace $workspace6
   bindsym $mod+7 workspace $workspace7
-  bindsym $mod+8 workspace $workspace8
-  bindsym $mod+9 workspace $workspace9
-  bindsym $mod+0 workspace $workspace10
 
   bindsym $mod+Shift+1 move container to workspace $workspace1
   bindsym $mod+Shift+2 move container to workspace $workspace2
@@ -120,9 +114,6 @@
   bindsym $mod+Shift+5 move container to workspace $workspace5
   bindsym $mod+Shift+6 move container to workspace $workspace6
   bindsym $mod+Shift+7 move container to workspace $workspace7
-  bindsym $mod+Shift+8 move container to workspace $workspace8
-  bindsym $mod+Shift+9 move container to workspace $workspace9
-  bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # Workspace Monitors
   workspace $workspace1 output $monitor1
@@ -132,9 +123,6 @@
   workspace $workspace5 output $monitor1
   workspace $workspace6 output $monitor1
   workspace $workspace7 output $monitor1
-  workspace $workspace8 output $monitor1
-  workspace $workspace9 output $monitor1
-  workspace $workspace10 output $monitor1
 
   # Move workspace between monitors
   bindsym $mod+m move workspace to output left
@@ -142,14 +130,14 @@
 # Program Workspaces
   # assign [class="google-chrome"] $workspace1
   # assign [class="Atom"] $workspace3
-  assign [class="Slack"] $workspace4
+  # assign [class="Slack"] $workspace4
   # assign [class="Thunar"] $workspace5
-  assign [class="Gimp"] $workspace6
-  assign [class="Inkscape"] $workspace6
-  assign [class="Steam"] $workspace7
-  assign [class="vlc"] $workspace8
-  assign [class="Skype"] $workspace9
-  assign [class="Spotify"] $workspace10
+  # assign [class="Gimp"] $workspace6
+  # assign [class="Inkscape"] $workspace6
+  # assign [class="Steam"] $workspace7
+  # assign [class="vlc"] $workspace8
+  # assign [class="Skype"] $workspace9
+  # assign [class="Spotify"] $workspace10
 
 # Floating
   for_window [class="Lxappearance"] floating enable
@@ -163,12 +151,12 @@
   }
 
 # Invert Caps Lock and EscapePlay
-  exec_always xmodmap -e "clear Lock"
-  exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-  exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+  # exec_always xmodmap -e "clear Lock"
+  # exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+  # exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # Wallpaper
-  exec_always feh --bg-scale /home/diego/Pictures/Wallpapers/aurora-lights.jpg
+  # exec_always feh --bg-scale /home/diego/Pictures/Wallpapers/aurora-lights.jpg
 
   # Fix default notification system
   exec killall -q notify-osd

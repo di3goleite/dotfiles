@@ -43,7 +43,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'gko/vim-coloresque'
 Plugin 'tpope/vim-surround'
 Plugin 'andrewradev/splitjoin.vim'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 
 " HTML
 Plugin 'othree/html5.vim'
@@ -259,20 +259,20 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:ag_working_path_mode="r"
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 0
+" let g:syntastic_check_on_wq = 1
 
 " Syntastic Checkers
-let g:syntastic_typescript_checkers=['tsc', 'tslint']
-let g:syntastic_typescript_tslint_exec='node_modules/.bin/tslint'
+" let g:syntastic_typescript_checkers=['tsc', 'tslint']
+" let g:syntastic_typescript_tslint_exec='node_modules/.bin/tslint'
 
-let g:syntastic_html_checkers=['']
+" let g:syntastic_html_checkers=['']
 
 " JSX syntax highlighting
 let g:jsx_ext_required=0
@@ -285,6 +285,11 @@ endfunction
 
 " Force vim to indent a blade file as html
 au BufReadPost *.blade.php set filetype=html
+
+" Tmux config
+if $TMUX == ''
+  set clipboard+=unnamed
+endif
 
 "*****************************************************************************
 " Mappings

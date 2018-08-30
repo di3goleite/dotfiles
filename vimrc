@@ -13,8 +13,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" Interface
+" Colorschemes
 Plugin 'chriskempson/base16-vim'
+Plugin 'tpope/vim-vividchalk'
+Plugin 'sonph/onehalf'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'jacoborus/tender.vim'
+Plugin 'crusoexia/vim-monokai'
+
+" Interface
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -137,6 +144,7 @@ endif
 
 syntax enable
 set background=dark
+colorscheme vividchalk
 
 " Disable the blinking cursor
 set gcr=a:blinkon0
@@ -160,12 +168,12 @@ if exists("*fugitive#statusline")
 endif
 
 " CursorLine and CursorColumn
-:hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-:hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+" :hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+" :hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+" :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
 
 " vim-airline
-let g:airline_theme='dark'
+let g:airline_theme='simple'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1

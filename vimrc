@@ -142,9 +142,14 @@ if &term =~ '256color'
   set t_ut=
 endif
 
+" Colorscheme stuff
 syntax enable
 set background=dark
 colorscheme vividchalk
+
+" Remove cursor line underline
+hi CursorLine cterm=none
+hi CursorLine gui=none
 
 " Disable the blinking cursor
 set gcr=a:blinkon0

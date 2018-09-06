@@ -54,7 +54,7 @@ font:
     style: Italic
 
   # Point size of the font
-  size: 14.0
+  size: 16.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -81,33 +81,34 @@ render_timer: false
 # and cursor.background colors, otherwise invert the colors of the cursor.
 custom_cursor_colors: false
 
-# XTerm's default colors
+# iTerm2 default colors
 colors:
    # Default colors
    primary:
      background: '0x000000'
-     foreground: '0xffffff'
+     foreground: '0xc7c7c7'
+
    # Normal colors
    normal:
      black:   '0x000000'
-     red:     '0xcd0000'
-     green:   '0x00cd00'
-     yellow:  '0xcdcd00'
-     blue:    '0x0000ee'
-     magenta: '0xcd00cd'
-     cyan:    '0x00cdcd'
-     white:   '0xe5e5e5'
+     red:     '0xc91b00'
+     green:   '0x00c200'
+     yellow:  '0xc7c400'
+     blue:    '0x0225c7'
+     magenta: '0xc930c7'
+     cyan:    '0x00c5c7'
+     white:   '0xc7c7c7'
 
    # Bright colors
    bright:
-     black:   '0x7f7f7f'
-     red:     '0xff0000'
-     green:   '0x00ff00'
-     yellow:  '0xffff00'
-     blue:    '0x5c5cff'
-     magenta: '0xff00ff'
-     cyan:    '0x00ffff'
-     white:   '0xffffff'
+     black:   '0x676767'
+     red:     '0xff6d67'
+     green:   '0x5ff967'
+     yellow:  '0xfefb67'
+     blue:    '0x6871ff'
+     magenta: '0xff76ff'
+     cyan:    '0x5ffdff'
+     white:   '0xfeffff'
 
 # Visual Bell
 #

@@ -1,3 +1,4 @@
+" Vundle stuff
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -16,10 +17,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Colorschemes
 Plugin 'chriskempson/base16-vim'
 Plugin 'tpope/vim-vividchalk'
-Plugin 'sonph/onehalf'
 Plugin 'NLKNguyen/papercolor-theme'
 Plugin 'jacoborus/tender.vim'
 Plugin 'crusoexia/vim-monokai'
+Plugin 'sonph/onehalf'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
@@ -151,6 +152,10 @@ colorscheme vividchalk
 hi CursorLine cterm=none
 hi CursorLine gui=none
 
+" Set hlsearch background color
+hi Search ctermbg=DarkGray
+hi Search ctermfg=White
+
 " Disable the blinking cursor
 set gcr=a:blinkon0
 set scrolloff=3
@@ -172,32 +177,16 @@ if exists("*fugitive#statusline")
   set statusline+=%{fugitive#statusline()}
 endif
 
-" CursorLine and CursorColumn
-" :hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-" :hi CursorColumn cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
-" :nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
-
 " vim-airline
-let g:airline_theme='simple'
+let g:airline_theme = 'simple'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
 
-" MacVim gui options
-if has('gui_running')
-  set guifont=Monaco:h14
-  let g:airline_theme='base16'
-  let base16colorspace=256
-  colorscheme base16-bright
-  au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
-endif
-
-" Fix highlight foreground color
-hi Search guifg=Black
-
 "*****************************************************************************
 " Autocmd Rules
 "*****************************************************************************
+
 " The PC is fast enough, do syntax highlight syncing from start
 augroup vimrc-sync-fromstart
   autocmd!
@@ -210,12 +199,6 @@ augroup vimrc-remember-cursor-position
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
-" Fix PHP syntax
-augroup phpSyntaxOverride
-  autocmd!
-  autocmd FileType php call PhpSyntaxOverride()
-augroup END
-
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 set autoread
@@ -224,14 +207,17 @@ set autoread
 " Advanced Setup
 "*****************************************************************************
 
+" Prevent Ag to open the first result in buffer
+ca Ag Ag!
+
 " NERDTree
-let g:NERDTreeChDirMode=2
-let g:NERDTreeIgnore=['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules', 'bower_components']
-let g:NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
-let g:NERDTreeShowBookmarks=1
-let g:NERDTreeMinimalUI=1
-let g:NERDTreeDirArrows=1
-let g:NERDTreeWinSize=30
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeIgnore = ['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules', 'bower_components']
+let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
+let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 28
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
 " CtrlP
@@ -265,38 +251,13 @@ let g:tagbar_type_typescript = {
   \ 'sort' : 0
 \ }
 
-" SuperTab
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " Ag
 let g:ag_working_path_mode="r"
-
-" Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 0
-" let g:syntastic_check_on_wq = 1
-
-" Syntastic Checkers
-" let g:syntastic_typescript_checkers=['tsc', 'tslint']
-" let g:syntastic_typescript_tslint_exec='node_modules/.bin/tslint'
-
-" let g:syntastic_html_checkers=['']
 
 " JSX syntax highlighting
 let g:jsx_ext_required=0
 
-" Fix PHP syntax
-function! PhpSyntaxOverride()
-    hi! def link phpDocTags  phpDefine
-    hi! def link phpDocParam phpType
-endfunction
-
-" Force vim to indent a blade file as html
+" Force vim to indent blade files as html
 au BufReadPost *.blade.php set filetype=html
 
 " Tmux config
@@ -308,7 +269,7 @@ endif
 " Mappings
 "*****************************************************************************
 
-" replace currently selected text with default register
+" Replace currently selected text with default register
 " without yanking it
 vnoremap p "_dP
 
@@ -324,8 +285,9 @@ noremap <Leader>h :<C-u>split<CR>
 noremap <Leader>v :<C-u>vsplit<CR>
 
 " Git
-noremap <Leader>gw :Gwrite<CR>
+noremap <Leader>ga :Git add -- .<CR><CR>
 noremap <Leader>gc :Gcommit<CR>
+noremap <Leader>gw :Gwrite<CR>
 noremap <Leader>gsh :Gpush<CR>
 noremap <Leader>gll :Gpull<CR>
 noremap <Leader>gs :Gstatus<CR>
@@ -339,10 +301,13 @@ nnoremap <S-Tab> gT
 nnoremap <silent> <S-t> :tabnew<CR>
 
 " Set working directory
-nnoremap <leader>. :lcd %:p:h<CR>
+nnoremap <Leader>. :lcd %:p:h<CR>
 
 " Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
+nnoremap <silent> <Leader><space> :noh<cr>
+
+" SuperTab
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " Vmap for maintain Visual Mode after shifting > and <
 vmap < <gv

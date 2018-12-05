@@ -56,7 +56,7 @@ Plugin 'andrewradev/splitjoin.vim'
 " HTML
 Plugin 'othree/html5.vim'
 Plugin 'mattn/emmet-vim'
-Plugin 'gregsexton/MatchTag'
+Plugin 'valloric/matchtagalways'
 
 " CSS
 Plugin 'hail2u/vim-css3-syntax'

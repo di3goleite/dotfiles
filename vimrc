@@ -67,9 +67,12 @@ Plugin 'groenewege/vim-less'
 " JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'leafgarland/typescript-vim'
 Plugin 'gavocanov/vim-js-indent'
+
 Plugin 'mxw/vim-jsx'
+
+Plugin 'Quramy/tsuquyomi'
+Plugin 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -137,7 +140,9 @@ set mouse-=a
 set cursorline
 set synmaxcol=200
 set guioptions=egmrti
+set guifont=Monaco:h16
 set ttyfast
+set lazyredraw
 
 if &term =~ '256color'
   set t_ut=
@@ -199,6 +204,7 @@ augroup vimrc-remember-cursor-position
   autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 augroup END
 
+" Close tab if the only remaining window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 set autoread
@@ -211,6 +217,8 @@ set autoread
 ca Ag Ag!
 
 " NERDTree
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeChDirMode = 2
 let g:NERDTreeIgnore = ['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules', 'bower_components']
 let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
@@ -256,6 +264,10 @@ let g:ag_working_path_mode="r"
 
 " JSX syntax highlighting
 let g:jsx_ext_required=0
+
+" TypeScript configuration
+let g:tsuquyomi_disable_quickfix = 1
+let g:tsuquyomi_shortest_import_path = 1
 
 " Force vim to indent blade files as html
 au BufReadPost *.blade.php set filetype=html

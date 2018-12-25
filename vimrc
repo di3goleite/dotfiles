@@ -207,8 +207,6 @@ augroup END
 " Close tab if the only remaining window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-set autoread
-
 "*****************************************************************************
 " Advanced Setup
 "*****************************************************************************

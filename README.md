@@ -4,7 +4,7 @@ My vim, tmux and i3wm dotfiles.
 
 ## Screenshot
 
-![First Version](assets/screenshot.png)
+![First Version](https://i.imgur.com/iAGK6gN.png)
 
 ## Pre-requisites
 

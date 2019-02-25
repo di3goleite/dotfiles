@@ -15,12 +15,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes
-Plugin 'chriskempson/base16-vim'
 Plugin 'tpope/vim-vividchalk'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'jacoborus/tender.vim'
 Plugin 'crusoexia/vim-monokai'
-Plugin 'sonph/onehalf'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
@@ -44,14 +40,9 @@ Plugin 'ervandew/supertab'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-commentary'
 Plugin 'Raimondi/delimitMate'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'easymotion/vim-easymotion'
-Plugin 'ap/vim-css-color'
-Plugin 'gko/vim-coloresque'
 Plugin 'tpope/vim-surround'
-Plugin 'andrewradev/splitjoin.vim'
-" Plugin 'vim-syntastic/syntastic'
 
 " HTML
 Plugin 'othree/html5.vim'
@@ -63,16 +54,19 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'wavded/vim-stylus'
 Plugin 'groenewege/vim-less'
+Plugin 'ap/vim-css-color'
 
 " JavaScript
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'gavocanov/vim-js-indent'
 
-Plugin 'mxw/vim-jsx'
-
+" TypeScript
 Plugin 'Quramy/tsuquyomi'
 Plugin 'leafgarland/typescript-vim'
+
+" JSX
+Plugin 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

@@ -16,7 +16,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Colorschemes
 Plugin 'tpope/vim-vividchalk'
-Plugin 'crusoexia/vim-monokai'
+" Plugin 'crusoexia/vim-monokai'
+Plugin 'sickill/vim-monokai'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
@@ -145,7 +146,8 @@ endif
 " Colorscheme stuff
 syntax enable
 set background=dark
-colorscheme vividchalk
+" colorscheme vividchalk
+colorscheme monokai
 
 " Remove cursor line underline
 hi CursorLine cterm=none
@@ -210,7 +212,8 @@ ca Ag Ag!
 " NERDTree
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
-let g:NERDTreeChDirMode = 2
+" let g:NERDTreeChDirMode = 2
+let NERDTreeChDirMode=1
 let g:NERDTreeIgnore = ['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules', 'bower_components']
 let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks = 1

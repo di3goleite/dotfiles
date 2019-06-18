@@ -10,6 +10,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export LANG=en_US.UTF-8
 
 # Environment variables
 export ANT_HOME=/usr/local/Cellar/ant

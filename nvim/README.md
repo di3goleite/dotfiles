@@ -12,12 +12,12 @@ Install The Silver Searcher for Ag
 brew install the_silver_searcher
 ```
 
-Create nvim configuration directory
+Create configuration directory
 ```
 mkdir ~/.config/nvim
 ```
 
-Copy the init.vim file to nvim configuration folder
+Copy files to configuration folder
 ```
 cp init.vim ~/.config/nvim
 ```

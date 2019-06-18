@@ -22,12 +22,12 @@ Install dependency to control video brightness
 light: https://github.com/haikarainen/light
 ```
 
-Create i3wm configuration directory
+Create configuration directory
 ```
 mkdir ~/.config/i3
 ```
 
-Copy the config files to i3wm configuration folder
+Copy files to configuration folder
 ```
 cp config i3status.conf ~/.config/i3
 ```

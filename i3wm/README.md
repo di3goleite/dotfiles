@@ -1,78 +1,94 @@
 # i3wm
 
-## Requirements
+## Instructions
 
-* Fonts:
-
-Awesome Fonts: https://github.com/FortAwesome/Font-Awesome
-
-* Ubuntu
-
+Install i3wm packages
 ```
-$ sudo apt-get install git vim zsh curl exuberant-ctags ncurses-term silversearcher-ag xclip httpie
+sudo apt-get install i3 rofi feh arandr lxappearance pavucontrol thunar thunar-archive-plugin nm-applet amixer
 ```
 
-* i3 Window Manager
-
+Install Awesome Fonts:
 ```
-$ sudo apt-get install i3 rofi feh arandr lxappearance pavucontrol thunar thunar-archive-plugin nm-applet amixer
+https://github.com/FortAwesome/Font-Awesome
 ```
 
+Install dependency to control audio output
 ```
 playerctl: https://github.com/acrisci/playerctl
 ```
 
+Install dependency to control video brightness
 ```
 light: https://github.com/haikarainen/light
 ```
 
-
-## Instructions
-Move the config file to i3 config folder:
+Create i3wm configuration directory
 ```
-cp config ~/.config/i3/config
+mkdir ~/.config/i3
 ```
 
+Copy the config files to i3wm configuration folder
 ```
-cp i3status.conf ~/.config/i3/i3status.conf
+cp config i3status.conf ~/.config/i3
 ```
 
-## How to remove i3
+Set Thunar as default file manager
+```
+gvfs-mime --set inode/directory Thunar.desktop
+```
 
-`sudo apt-get remove dunst i3 i3-wm i3lock i3status suckless-tools thunar`
+## How to set a wallpaper?
 
-* Set thunar as default file manager
+Go to the bottom of config file and add this line
+```
+exec_always feh --bg-scale /ABSOLUTE_PATH_FOR_THE_WALLPAPER/FILENAME.jpg
+```
 
-`gvfs-mime --set inode/directory Thunar.desktop`
+## How to remove i3wm?
 
-Rollback to Nautilus:
+Uninstall everything
+```
+sudo apt-get remove dunst i3 i3-wm i3lock i3status suckless-tools thunar
+```
 
-`gvfs-mime --set inode/directory org.gnome.Nautilus.desktop`
+Set Nautilus as default file manager
+```
+gvfs-mime --set inode/directory org.gnome.Nautilus.desktop
+```
 
-**See:** [How to set thunar as default file manager](http://askubuntu.com/a/664308)
+## Commands
 
-To set a wallpaper, go to the bottom of config file and add: `exec_always feh --bg-scale /home/diego/Pictures/Wallpapers/aurora-borealis.jpg`
+List monitors and hdmi devices:
+```
+sudo xrandr --prop
+```
 
-## Useful commands to work with **i3wm**
+List Wifi network available:
+```
+sudo iwlist wlp8s0 scan | grep SSID
+```
 
-### List monitors and hdmi devices:
-`sudo xrandr --prop`
+Connect to a Wifi network
+```
+nmcli d wifi connect WIFI_NAME password WIFI_PASSWORD
+```
 
-### List Wifi network available:
-`sudo iwlist wlp8s0 scan | grep SSID`
+Change brightness (0-900):
+```
+echo 0 | sudo tee /sys/class/backlight/acpi_video0/brightness
+```
 
-### Connect to a Wifi network
-`nmcli d wifi connect hue password 123tapioca`
+Set proxy:
+```
+export http_proxy="10.65.16.2:3128"
+```
 
-### Change brightness (0-900):
-`echo 0 | sudo tee /sys/class/backlight/acpi_video0/brightness`
+Unset proxy
+```
+unset http_proxy
+```
 
-### Set proxy:
-`export http_proxy="10.65.16.2:3128"`
-
-### Unset proxy
-`unset http_proxy`
-
-### Attach ssh key to current session
-`ssh-add`
-
+Attach ssh key to current session
+```
+ssh-add
+```

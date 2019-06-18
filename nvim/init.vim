@@ -1,78 +1,65 @@
-" Vundle stuff
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
 "*****************************************************************************
-" Bundles
+" Plugins
 "*****************************************************************************
+call plug#begin('~/.local/share/nvim/plugged')
 
-call vundle#begin()
-
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-" Colorschemes
-Plugin 'tpope/vim-vividchalk'
-" Plugin 'crusoexia/vim-monokai'
-Plugin 'sickill/vim-monokai'
+" Color Schemes
+Plug 'tpope/vim-vividchalk'
+Plug 'sickill/vim-monokai'
 
 " Interface
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " File
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'taiansu/nerdtree-ag'
-Plugin 'kien/ctrlp.vim'
-Plugin 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'taiansu/nerdtree-ag'
+Plug 'kien/ctrlp.vim'
+Plug 'rking/ag.vim'
 
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/gv.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
 
 " Utilities
-Plugin 'majutsushi/tagbar'
-Plugin 'ervandew/supertab'
-Plugin 'godlygeek/tabular'
-Plugin 'tpope/vim-commentary'
-Plugin 'Raimondi/delimitMate'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'tpope/vim-surround'
+Plug 'majutsushi/tagbar'
+Plug 'ervandew/supertab'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-commentary'
+Plug 'Raimondi/delimitMate'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
 
 " HTML
-Plugin 'othree/html5.vim'
-Plugin 'mattn/emmet-vim'
-Plugin 'valloric/matchtagalways'
+Plug 'othree/html5.vim'
+Plug 'mattn/emmet-vim'
+Plug 'valloric/matchtagalways'
 
 " CSS
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'wavded/vim-stylus'
-Plugin 'groenewege/vim-less'
-Plugin 'ap/vim-css-color'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'wavded/vim-stylus'
+Plug 'groenewege/vim-less'
+Plug 'ap/vim-css-color'
 
 " JavaScript
-Plugin 'pangloss/vim-javascript'
-Plugin 'othree/javascript-libraries-syntax.vim'
-Plugin 'gavocanov/vim-js-indent'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'gavocanov/vim-js-indent'
 
 " TypeScript
-Plugin 'Quramy/tsuquyomi'
-Plugin 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
 
 " JSX
-Plugin 'mxw/vim-jsx'
+Plug 'mxw/vim-jsx'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
-
-filetype plugin indent on    " required
+" Initialize plugin system
+call plug#end()
 
 "*****************************************************************************
 " Basic Setup

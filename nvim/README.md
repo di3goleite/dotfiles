@@ -12,6 +12,12 @@ Install The Silver Searcher for Ag
 brew install the_silver_searcher
 ```
 
+Install Vim Plug for plugin management
+```
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
 Create configuration directory
 ```
 mkdir ~/.config/nvim
@@ -20,6 +26,16 @@ mkdir ~/.config/nvim
 Copy files to configuration folder
 ```
 cp init.vim ~/.config/nvim
+```
+
+Open nvim configuration file
+```
+nvim ~/.config/nvim/init.vim
+```
+
+Install plugins
+```
+:PlugInstall
 ```
 
 ## Commands

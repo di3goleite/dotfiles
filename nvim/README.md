@@ -12,7 +12,7 @@ Install The Silver Searcher for Ag
 brew install the_silver_searcher
 ```
 
-Install pip package for nvim:
+Install pip package for nvim
 ```
 pip3 install neovim
 ```

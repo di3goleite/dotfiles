@@ -1,6 +1,6 @@
 # nvim
 
-## Instructions
+## How to install?
 
 Install NeoVIM
 ```

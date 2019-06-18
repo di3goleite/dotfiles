@@ -1,6 +1,6 @@
 # zsh
 
-## Instructions
+## How to install?
 
 Install from Homebrew
 ```

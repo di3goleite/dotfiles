@@ -1,6 +1,6 @@
 # i3wm
 
-## Instructions
+## How to install?
 
 Install i3wm packages
 ```

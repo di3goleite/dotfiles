@@ -12,6 +12,11 @@ Install The Silver Searcher for Ag
 brew install the_silver_searcher
 ```
 
+Install pip package for nvim:
+```
+pip3 install neovim
+```
+
 Install Vim Plug for plugin management
 ```
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \

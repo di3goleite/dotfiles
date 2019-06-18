@@ -21,3 +21,7 @@ Download tmux-battery plugin to tmux configuration directory
 ```
 git clone https://github.com/tmux-plugins/tmux-battery ~/.config/tmux/tmux-battery
 ```
+
+## Commands
+
+See this cheatsheet: https://gist.github.com/henrik/1967800

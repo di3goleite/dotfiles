@@ -46,7 +46,7 @@ Install plugins
 ## Tips
 
 * [Multiple Cursors](https://medium.com/@schtoeffel/you-don-t-need-more-than-one-cursor-in-vim-2c44117d51db)
-* [Fold and Unfold](https://www.linux.com/learn/vim-tips-folding-fun)
+* [Fold and Unfold](https://gist.github.com/lestoni/8c74da455cce3d36eb68)
 * [Jump Between HTML Tags](https://unix.stackexchange.com/a/185290)
 * [Visual Mode Search for Selection](https://salferrarello.com/vim-visual-mode-search-selection/)
 * [Find Next or Previous](https://stackoverflow.com/a/6607664/3142942)

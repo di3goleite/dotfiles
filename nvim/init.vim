@@ -99,6 +99,10 @@ set autoindent
 set smartindent
 set cindent
 
+" Enable fold
+set foldmethod=indent
+set nofoldenable
+
 " Customize word separators
 set iskeyword+=_,$,@,%,#
 

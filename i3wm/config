@@ -1,12 +1,12 @@
 # Constants
   set $mod Mod4
 
-  set $workspace1 "1: Vim"
+  set $workspace1 "1: Code"
   set $workspace2 "2: Terminal"
   set $workspace3 "3: Browser"
   set $workspace4 "4: Slack"
-  set $workspace5 "5: Telegram"
-  set $workspace6 "6: Spotify"
+  set $workspace6 "5: Spotify"
+  set $workspace5 "6: Telegram"
   set $workspace7 "7: Things"
 
   set $monitor1 "eDP-1"
@@ -81,8 +81,8 @@
 
 # Volume & Media Bindings
   # Pulse Audio controls
-  bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 10%-
-  bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 10%+
+  bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 7%-
+  bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 7%+
   bindsym XF86AudioMute exec amixer -D pulse sset Master toggle
 
   # Media player controls
@@ -94,6 +94,10 @@
   # Sreen brightness controls
   bindsym XF86MonBrightnessUp exec light -A 5
   bindsym XF86MonBrightnessDown exec light -U 5
+
+  # Keyboard backlight controls
+  bindsym XF86KbdBrightnessUp exec light -s sysfs/leds/smc::kbd_backlight -A 15
+  bindsym XF86KbdBrightnessDown exec light -s sysfs/leds/smc::kbd_backlight -U 15
 
   # Screenshot
   bindsym Print exec gnome-screenshot
@@ -142,6 +146,7 @@
 # Floating
   for_window [class="Lxappearance"] floating enable
   for_window [class="Pavucontrol"] floating enable
+  for_window [class="Blueman-manager"] floating enable
 
 # Bar
   bar {
@@ -151,11 +156,11 @@
   }
 
 # Invert Caps Lock and EscapePlay
-  # exec_always xmodmap -e "clear Lock"
-  # exec_always xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-  # exec_always xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+  exec xmodmap -e "clear Lock"
+  exec xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+  exec xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
-# Wallpaper
+# Startup Services
   # exec_always feh --bg-scale /home/diego/Pictures/Wallpapers/aurora-lights.jpg
 
   # Fix default notification system
@@ -166,7 +171,10 @@
   exec --no-startup-id xset r rate 300 35
 
   # Natural scroll for touchpad
-  exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
+  # exec --no-startup-id synclient HorizEdgeScroll=1 VertEdgeScroll=1 VertScrollDelta=-111
 
-# Network
-  exec_always --no-startup-id nm-applet
+  # Network
+  exec --no-startup-id nm-applet --sm-disable
+
+  # Bluetooth
+  exec --no-startup-id blueman-applet

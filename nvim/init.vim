@@ -137,8 +137,8 @@ endif
 " Colorscheme stuff
 syntax enable
 set background=dark
-" colorscheme vividchalk
-colorscheme monokai
+colorscheme vividchalk
+" colorscheme monokai
 
 " Remove cursor line underline
 hi CursorLine cterm=none

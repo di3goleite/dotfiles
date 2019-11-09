@@ -55,7 +55,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
 
 " JSX
-Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
 
 " All of your Plugins must be added before the following line
 " Initialize plugin system

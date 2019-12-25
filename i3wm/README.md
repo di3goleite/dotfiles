@@ -4,7 +4,7 @@
 
 Install i3wm packages
 ```
-sudo apt-get install i3 rofi feh arandr lxappearance pavucontrol thunar thunar-archive-plugin nm-applet amixer
+sudo apt-get install i3 rofi feh arandr lxappearance pavucontrol thunar thunar-archive-plugin nm-applet amixer bluenman
 ```
 
 Install Awesome Fonts:

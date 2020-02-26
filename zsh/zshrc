@@ -2,7 +2,7 @@
 export ZSH="/Users/diegoleite/.oh-my-zsh"
 
 # Set name of the theme to load
-ZSH_THEME="robbyrussell"
+ZSH_THEME="ys"
 
 # Which plugins would you like to load?
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)

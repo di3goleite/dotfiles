@@ -126,7 +126,7 @@ set mouse-=a
 set cursorline
 set synmaxcol=200
 set guioptions=egmrti
-set guifont=Monaco:h16
+set guifont=Fira\ Code:h16
 set ttyfast
 set lazyredraw
 

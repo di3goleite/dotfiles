@@ -16,7 +16,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'taiansu/nerdtree-ag'
 Plug 'kien/ctrlp.vim'
-Plug 'rking/ag.vim'
+Plug 'mileszs/ack.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -32,11 +32,12 @@ Plug 'Raimondi/delimitMate'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'troydm/zoomwintab.vim'
 
 " HTML
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
-Plug 'valloric/matchtagalways'
 
 " CSS
 Plug 'hail2u/vim-css3-syntax'
@@ -57,7 +58,10 @@ Plug 'leafgarland/typescript-vim'
 " JSX
 Plug 'maxmellon/vim-jsx-pretty'
 
-" All of your Plugins must be added before the following line
+" Linter
+Plug 'dense-analysis/ale'
+
+" All of your Plugins must be added before the fodense-analysis/alellowing line
 " Initialize plugin system
 call plug#end()
 
@@ -124,15 +128,13 @@ set relativenumber
 set t_Co=256
 set mouse-=a
 set cursorline
-set synmaxcol=200
+set signcolumn=yes
+" set synmaxcol=200
 set guioptions=egmrti
-set guifont=Fira\ Code:h16
+" set guifont=Fira\ Code:h16
 set ttyfast
 set lazyredraw
-
-if &term =~ '256color'
-  set t_ut=
-endif
+set scrolloff=3
 
 " Colorscheme stuff
 syntax enable
@@ -150,7 +152,6 @@ hi Search ctermfg=White
 
 " Disable the blinking cursor
 set gcr=a:blinkon0
-set scrolloff=3
 
 " Use modeline overrides
 set modeline
@@ -159,6 +160,21 @@ set modelines=10
 set title
 set titleold="Terminal"
 set titlestring=%F
+
+" Ale
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+" GitGutter
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#BBBB00 ctermfg=3
+highlight GitGutterDelete guifg=#FF2222 ctermfg=1
+
+" Sign column
+highlight! link SignColumn LineNr
 
 " Status bar
 set laststatus=2
@@ -173,6 +189,7 @@ let g:airline_theme = 'simple'
 let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#ale#enabled = 1
 
 "*****************************************************************************
 " Autocmd Rules
@@ -193,25 +210,35 @@ augroup END
 " Close tab if the only remaining window is NerdTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Update GitGutter signs once a file is saved
+autocmd BufWritePost * GitGutter
+
 "*****************************************************************************
 " Advanced Setup
 "*****************************************************************************
 
-" Prevent Ag to open the first result in buffer
-ca Ag Ag!
+" Ack
+cnoreabbrev Ack Ack!
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " NERDTree
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
-" let g:NERDTreeChDirMode = 2
-let NERDTreeChDirMode=1
-let g:NERDTreeIgnore = ['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules', 'bower_components']
+let g:NERDTreeChDirMode = 2
+let g:NERDTreeIgnore = ['\.rbc$', '\~$', '\.pyc$', '\.db$', '\.sqlite$', '__pycache__', 'node_modules', 'bower_components', 'build']
 let g:NERDTreeSortOrder = ['^__\.py$', '\/$', '*', '\.swp$', '\.bak$', '\~$']
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 28
+let g:NERDTreeWinSize = 34
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
+
+if has('gui_running')
+  au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
+endif
 
 " CtrlP
 set wildmode=list:longest,list:full
@@ -247,6 +274,9 @@ let g:tagbar_type_typescript = {
 " Ag
 let g:ag_working_path_mode="r"
 
+" Ale
+let b:ale_fixers = ['eslint']
+
 " JSX syntax highlighting
 let g:jsx_ext_required=0
 
@@ -270,9 +300,22 @@ endif
 " without yanking it
 vnoremap p "_dP
 
+" Excluding trailing whitespace from visual mode select
+vnoremap $ g_
+
+" File navigation
+nnoremap gb <C-^>
+
 " NERDTree
 nnoremap <silent> <C-t> :NERDTreeToggle<CR>
 nnoremap <silent> <C-l> :NERDTreeFind<CR>
+
+" Ale
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+" Ack
+nnoremap <Leader>a :Ack!<Space>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -313,4 +356,3 @@ vmap > >gv
 " Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-

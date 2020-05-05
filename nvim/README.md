@@ -12,6 +12,11 @@ Install The Silver Searcher for Ag
 brew install the_silver_searcher
 ```
 
+Install Exuberant ctags for Tagbar
+```
+brew install ctags
+```
+
 Install pip package for nvim
 ```
 pip3 install neovim

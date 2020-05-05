@@ -5,7 +5,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Color Schemes
 Plug 'tpope/vim-vividchalk'
-Plug 'sickill/vim-monokai'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'patstockwell/vim-monokai-tasty'
 
 " Interface
 Plug 'vim-airline/vim-airline'
@@ -50,6 +51,7 @@ Plug 'ap/vim-css-color'
 Plug 'pangloss/vim-javascript'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'gavocanov/vim-js-indent'
+Plug 'elzr/vim-json'
 
 " TypeScript
 Plug 'Quramy/tsuquyomi'
@@ -57,6 +59,7 @@ Plug 'leafgarland/typescript-vim'
 
 " JSX
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
 " Linter
 Plug 'dense-analysis/ale'
@@ -140,7 +143,6 @@ set scrolloff=3
 syntax enable
 set background=dark
 colorscheme vividchalk
-" colorscheme monokai
 
 " Remove cursor line underline
 hi CursorLine cterm=none
@@ -236,10 +238,6 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 34
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,*.db,*.sqlite
 
-if has('gui_running')
-  au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
-endif
-
 " CtrlP
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,*.pyc,__pycache__
@@ -291,6 +289,22 @@ au BufReadPost *.blade.php set filetype=html
 if $TMUX == ''
   set clipboard+=unnamed
 endif
+
+" Gui specific setup
+if has('gui_running')
+  " NERDTree
+  au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/
+
+  " One Dark/Light
+  " colorscheme onehalfdark
+  " let g:airline_theme = 'onehalfdark'
+
+  " Monokai Tasty
+  let g:vim_monokai_tasty_italic = 1
+  colorscheme vim-monokai-tasty
+  let g:airline_theme = 'monokai_tasty'
+endif
+
 
 "*****************************************************************************
 " Mappings

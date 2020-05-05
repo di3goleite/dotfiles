@@ -290,7 +290,7 @@ if $TMUX == ''
   set clipboard+=unnamed
 endif
 
-" Gui specific setup
+" GUI specific setup
 if has('gui_running')
   " NERDTree
   au VimEnter * NERDTreeToggle /Users/diegoleite/Workspace/

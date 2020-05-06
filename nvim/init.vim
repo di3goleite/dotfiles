@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-vividchalk'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'patstockwell/vim-monokai-tasty'
+Plug 'whatyouhide/vim-gotham'
 
 " Interface
 Plug 'vim-airline/vim-airline'
@@ -128,13 +129,10 @@ set autoread " reload files when changed on disk, i.e. via `git checkout`
 set ruler
 set number
 set relativenumber
-set t_Co=256
 set mouse-=a
 set cursorline
 set signcolumn=yes
-" set synmaxcol=200
 set guioptions=egmrti
-" set guifont=Fira\ Code:h16
 set ttyfast
 set lazyredraw
 set scrolloff=3
@@ -300,9 +298,13 @@ if has('gui_running')
   " let g:airline_theme = 'onehalfdark'
 
   " Monokai Tasty
-  let g:vim_monokai_tasty_italic = 1
-  colorscheme vim-monokai-tasty
-  let g:airline_theme = 'monokai_tasty'
+  " let g:vim_monokai_tasty_italic = 1
+  " colorscheme vim-monokai-tasty
+  " let g:airline_theme = 'monokai_tasty'
+
+  " Gotham
+  colorscheme gotham
+  let g:airline_theme = 'gotham'
 endif
 
 

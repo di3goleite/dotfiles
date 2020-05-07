@@ -281,6 +281,7 @@ let g:tsuquyomi_shortest_import_path = 1
 
 " Force vim to indent blade files as html
 au BufReadPost *.blade.php set filetype=html
+au BufReadPost *.tsx set filetype=typescript
 
 " Tmux config
 if $TMUX == ''

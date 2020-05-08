@@ -216,6 +216,10 @@ autocmd BufWritePost * GitGutter
 " Advanced Setup
 "*****************************************************************************
 
+" Autocomplete based on filetype
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+
 " Ack
 cnoreabbrev Ack Ack!
 
@@ -270,7 +274,9 @@ let g:tagbar_type_typescript = {
 let g:ag_working_path_mode="r"
 
 " Ale
-let b:ale_fixers = ['eslint']
+let b:ale_fixers = ['stylelint', 'eslint']
+let b:ale_linter_aliases = ['css', 'scss', 'javascript']
+let b:ale_linters = ['stylelint', 'stylelint-scss', 'eslint']
 
 " JSX syntax highlighting
 let g:jsx_ext_required=0

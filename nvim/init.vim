@@ -53,6 +53,10 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'gavocanov/vim-js-indent'
 Plug 'elzr/vim-json'
 
+" Python
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
+
 " TypeScript
 Plug 'Quramy/tsuquyomi'
 Plug 'leafgarland/typescript-vim'
